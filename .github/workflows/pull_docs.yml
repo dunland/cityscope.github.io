@@ -15,7 +15,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v2
       - name: Update CS_Brix
         run: bash .github/scripts/update.sh CityScope CS_Brix docsite/docs/backend master/docs/markdown/docusaurus.md 
@@ -29,8 +29,8 @@ jobs:
         with:
           author_name: crisjf
           author_email: crisjf@mit.edu
-          message: "Commit from actions"
+          message: "Auto documentation update from Actions"
           add: "."
-          ref: 'new_docsite'
+          ref: 'master'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
